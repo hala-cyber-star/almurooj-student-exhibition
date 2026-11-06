@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+/* =====================================================
+   1) الخط: خط Cairo من Google Fonts يدعم العربية.
+      لتغيير الخط: بدّلي كلمة Cairo (هنا وفي السطر
+      font-family بالأسفل) باسم خط آخر مثل Tajawal.
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+
+/* =====================================================
+   2) إعدادات عامة تنطبق على كل عناصر الصفحة
+   ===================================================== */
+* {
+    margin: 0;                  /* إلغاء المسافات الافتراضية للمتصفح */
+    padding: 0;
+    box-sizing: border-box;     /* يجعل حساب العرض والحشو أسهل */
+    scroll-behavior: smooth;    /* تمرير ناعم عند الضغط على الروابط */
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0d3299;  /* لون خلفية الموقع (الأزرق): غيّريه من هنا */
+    color: #ffffff;             /* لون النص الافتراضي (أبيض) */
+    direction: rtl;             /* الاتجاه من اليمين لليسار */
+    text-align: right;
+}
+
+
+/* =====================================================
+   3) الشريط العلوي (القائمة)
+   ===================================================== */
+header {
+    display: flex;
+    justify-content: flex-start;   /* يبدأ من اليمين */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 50px;            /* الحشو الداخلي: أعلى/أسفل 20 ويمين/يسار 50 */
+    margin: 2rem 0;                /* المسافة فوق وتحت الشريط */
+}
+
+/* حجم لوجو المدرسة إن أضفتِه (الكود في HTML معلّق افتراضياً) */
+.logo {
+    height: 60px;
+    margin-left: 30px;             /* مسافة بين اللوجو والقائمة */
+}
+
+.stylebar ul {
+    list-style: none;              /* إخفاء النقاط */
+    display: flex;                 /* ترتيب الروابط بجانب بعض */
+    flex-wrap: wrap;               /* نزول الروابط لسطر جديد في الشاشات الصغيرة */
+    gap: 25px;                     /* المسافة بين الروابط */
+}
+
+.stylebar a {
+    text-decoration: none;         /* إزالة الخط تحت الرابط */
+    color: #ffffff;
+    font-weight: 700;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+/* عند مرور الماوس على الرابط */
+.stylebar a:hover {
+    color: #ffcc00;                /* الأصفر: لون التمييز في الموقع */
+}
+
+/* الصفحة التي أنتِ فيها حالياً (class="active" في HTML) */
+.stylebar a.active {
+    color: #ffcc00;
+    border-bottom-color: #ffcc00;  /* خط أصفر تحت الرابط */
+}
+
+/* الخط الفاصل تحت الشريط */
+hr {
+    opacity: 50%;
+}
+
+
+/* =====================================================
+   4) الصفحة الرئيسية
+   ===================================================== */
+.main {
+    display: flex;
+    flex-direction: column;        /* العناصر فوق بعضها */
+    align-items: center;           /* في المنتصف */
+    max-width: 1200px;
+    margin: 4rem auto 0;           /* auto يوسّط المحتوى في الصفحة */
+    padding: 0 20px;
+    text-align: center;
+}
+
+.mainsup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h1 {
+    font-size: 2.5rem;             /* حجم عنوان المدرسة */
+    font-weight: 900;
+}
+
+.main p {
+    margin: 2rem 0;
+    max-width: 800px;              /* عرض الفقرة (حتى لا تمتد كثيراً) */
+    line-height: 1.9;              /* المسافة بين الأسطر */
+}
+
+.about {
+    margin-top: 3rem;
+}
+
+/* صورة الصفحة الرئيسية */
+.image {
+    max-width: 100%;               /* لا تتجاوز عرض الشاشة */
+    border-radius: 12px;           /* زوايا دائرية */
+}
+
+
+/* =====================================================
+   5) الصفحات الداخلية (الأعمال، الأقسام، التواصل)
+   ===================================================== */
+.page {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 20px 60px;
+}
+
+.page h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ffcc00;                /* لون عنوان الصفحة */
+}
+
+.section-intro {
+    margin: 8px 0 30px;
+    opacity: 0.85;                 /* شفافية خفيفة للنص التوضيحي */
+}
+
+/* رابط "العودة إلى أعمال الطالبات" */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.back-link:hover {
+    color: #ffcc00;
+    opacity: 1;
+}
+
+
+/* =====================================================
+   6) الأزرار (تستعمل في الرئيسية والأعمال والنموذج)
+   ===================================================== */
+.btn {
+    display: inline-block;
+    background: #ffcc00;           /* لون الزر */
+    color: #111111;                /* لون كتابة الزر */
+    border: 2px solid #ffcc00;
+    border-radius: 999px;          /* شكل بيضاوي */
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;               /* مؤشر اليد عند المرور */
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);   /* يرتفع الزر قليلاً عند المرور */
+    background: #ffd84d;
+}
+
+
+/* =====================================================
+   7) شبكة البطاقات (الأقسام والمشاريع)
+   ===================================================== */
+.grid {
+    display: grid;
+    /* أعمدة تتكيّف تلقائياً: كل بطاقة 280px على الأقل.
+       لتكبير البطاقات زيدي الرقم 280 */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;                     /* المسافة بين البطاقات */
+}
+
+.card {
+    background: #ffffff;           /* خلفية البطاقة */
+    color: #1f2937;                /* لون النص داخلها */
+    border-radius: 12px;
+    overflow: hidden;              /* يقصّ الصورة عند الزوايا الدائرية */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);   /* ترتفع البطاقة عند المرور */
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 220px;                 /* ارتفاع الصورة: غيّريه كما تريدين */
+    object-fit: cover;             /* قصّ الصورة لتملأ المساحة دون تشويه */
+    background: #d1d5db;           /* مربع رمادي يظهر حتى تضيفي الصور */
+}
+
+.card-body {
+    padding: 18px;                 /* المسافة داخل البطاقة تحت الصورة */
+}
+
+.card-body h3 {
+    color: #0d3299;                /* لون اسم المشروع أو القسم */
+    margin-bottom: 6px;
+}
+
+.card-body p {
+    margin-bottom: 12px;
+}
+
+.student {
+    color: #6b7280;                /* لون اسم الطالبة (رمادي) */
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   8) صفحة تواصل معنا
+   ===================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;   /* النموذج أعرض قليلاً من المعلومات */
+    gap: 30px;
+}
+
+/* نموذج التواصل */
+.contact-form {
+    background: #ffffff;
+    color: #1f2937;
+    padding: 28px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;        /* الحقول فوق بعضها */
+    gap: 8px;
+}
+
+.contact-form label {
+    font-weight: 700;
+    color: #0d3299;
+    margin-top: 8px;
+}
+
+/* حقول الكتابة (الاسم، الإيميل، الهاتف، الرسالة) */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* عند الضغط داخل الحقل */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #ffcc00;
+    border-color: #ffcc00;
+}
+
+.contact-form textarea {
+    resize: vertical;              /* السماح بتكبير الخانة للأسفل فقط */
+}
+
+.contact-form .btn {
+    margin-top: 16px;
+    align-self: flex-start;        /* الزر في بداية السطر وليس ممتداً */
+}
+
+/* معلومات المدرسة (بجانب النموذج) */
+.contact-info {
+    background: rgba(255, 255, 255, 0.08);   /* خلفية شفافة خفيفة */
+    padding: 28px;
+    border-radius: 12px;
+    line-height: 2;
+}
+
+.contact-info h2 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.contact-info h3 {
+    margin-top: 20px;
+    color: #ffcc00;
+}
+
+/* روابط صفحات المدرسة */
+.social-links {
+    list-style: none;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+
+
+/* =====================================================
+   9) التذييل (أسفل كل صفحة)
+   ===================================================== */
+.site-footer {
+    text-align: center;
+    padding: 24px 0;
+    background: rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   10) الهاتف والشاشات الصغيرة
+       (تعمل فقط عندما يقل عرض الشاشة عن 700px)
+   ===================================================== */
+@media (max-width: 700px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .stylebar ul {
+        gap: 14px;
+    }
+
+    .main h1 {
+        font-size: 1.8rem;
+    }
+
+    /* النموذج والمعلومات يصبحان فوق بعضهما بدل جنباً إلى جنب */
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1023px) {
+/* =====================================================
+   10) التجاوب مع كل أحجام الشاشات (Responsive)
+
+   كيف يعمل؟
+   - max-width: 992px  تعني "عندما يكون عرض الشاشة 992px أو أقل".
+   - الترتيب مهم: من الشاشة الأكبر إلى الأصغر، لأن الأصغر
+     يلغي ويعدّل ما قبله. لا تغيّري الترتيب.
+   - داخل كل قسم نكتب فقط ما يختلف عن الشكل الأساسي.
+   ===================================================== */
+
+
+/* ---------- أ) الشاشات الكبيرة جداً: 1400px فأكثر ----------
+   الأجهزة: شاشات الكمبيوتر الكبيرة (1440 و1920)
+   الوظيفة: توسيع الموقع قليلاً وتكبير الخط حتى لا يبدو صغيراً */
+@media (min-width: 1400px) {
+    header,
+    .main,
+    .page,
+    .work-section {
+        max-width: 1320px;      /* عرض المحتوى الأقصى (كان 1200) */
+    }
+
+    .main h1 {
+        font-size: 3rem;        /* عنوان أكبر */
+    }
+
+    .card img {
+        height: 260px;          /* صور أطول للبطاقات */
+    }
+}
+
+
+/* ---------- ب) اللابتوب الصغير: 1200px فأقل ----------
+   الأجهزة: لابتوبات بعرض 1280 إلى 1366
+   الوظيفة: تقليل الحشو الجانبي قليلاً */
+@media (max-width: 1200px) {
+    header {
+        padding: 20px 30px;     /* كان 50px يميناً ويساراً */
+    }
+
+    .main h1 {
+        font-size: 2.3rem;
+    }
+}
+
+
+/* ---------- ج) التابلت الأفقي: 992px فأقل ----------
+   الأجهزة: آيباد أفقي (حوالي 1024)، لابتوبات صغيرة جداً
+   الوظيفة: جعل البطاقات أصغر لتناسب 2 إلى 3 في السطر */
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .contact-layout {
+        gap: 20px;
+    }
+
+    .main p {
+        max-width: 90%;         /* الفقرة تأخذ مساحة أكبر نسبياً */
+    }
+}
+
+
+/* ---------- د) التابلت العمودي: 768px فأقل ----------
+   الأجهزة: آيباد وتابلت عمودي (حوالي 768 إلى 834)
+   الوظيفة: النموذج ومعلومات المدرسة يصبحان فوق بعضهما،
+            وتصغير الشريط والعناوين */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        margin: 1rem 0;
+    }
+
+    .stylebar ul {
+        gap: 18px;
+    }
+
+    .main {
+        margin-top: 2.5rem;
+    }
+
+    .main h1,
+    .page h1 {
+        font-size: 2rem;
+    }
+
+    /* العمود الواحد بدل عمودين في صفحة التواصل */
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        margin-top: 2rem;
+    }
+}
+
+
+/* ---------- هـ) الجوالات الكبيرة: 576px فأقل ----------
+   الأجهزة: جوالات كبيرة (حوالي 430 إلى 576)، أو الجوال وهو أفقي
+   الوظيفة: بطاقة واحدة في كل سطر، وقائمة في المنتصف */
+@media (max-width: 576px) {
+    header {
+        justify-content: center;   /* القائمة في منتصف الشاشة */
+        padding: 12px 10px;
+    }
+
+    .stylebar ul {
+        justify-content: center;
+        gap: 14px;
+        font-size: 0.95rem;
+    }
+
+    /* بطاقة واحدة في كل سطر */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .main h1,
+    .page h1 {
+        font-size: 1.7rem;
+    }
+
+    .section-intro {
+        margin-bottom: 20px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 20px;             /* حشو أقل داخل النموذج */
+    }
+
+    /* زر النموذج بعرض كامل ليسهل الضغط عليه */
+    .contact-form .btn {
+        align-self: stretch;
+        text-align: center;
+    }
+}
+
+
+/* ---------- و) الجوالات المتوسطة: 480px فأقل ----------
+   الأجهزة: iPhone وPixel وأغلب الجوالات (حوالي 390 إلى 430)
+   الوظيفة: تصغير الخطوط والمسافات قليلاً */
+@media (max-width: 480px) {
+    .main,
+    .page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .main h1,
+    .page h1 {
+        font-size: 1.5rem;
+    }
+
+    .main p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ---------- ز) الجوالات الصغيرة: 380px فأقل ----------
+   الأجهزة: iPhone SE وبعض جوالات Samsung الصغيرة (حوالي 360 إلى 375)
+   الوظيفة: أصغر مسافات وخطوط حتى لا يخرج شيء عن الشاشة */
+@media (max-width: 380px) {
+    .stylebar ul {
+        gap: 10px;
+        font-size: 0.85rem;
+    }
+
+    .main h1,
+    .page h1 {
+        font-size: 1.35rem;
+    }
+
+    .card img {
+        height: 170px;
+    }
+
+    .card-body {
+        padding: 14px;
+    }
+}
+
+
+/* ---------- ح) الجوال في الوضع الأفقي (قليل الارتفاع) ----------
+   الأجهزة: أي جوال عند تدويره أفقياً
+   الوظيفة: تقليل المسافات الرأسية لأن الارتفاع صغير */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        margin: 0.5rem 0;
+    }
+
+    .main {
+        margin-top: 1.5rem;
+    }
+}
+
+
+/* ---------- ط) شاشات اللمس ----------
+   الأجهزة: الجوالات والتابلت (لا يوجد ماوس)
+   الوظيفة: إلغاء حركة الارتفاع عند "المرور" لأنها تعلق
+            على الشاشات اللمسية بعد الضغط */
+@media (hover: none) {
+    .card:hover,
+    .btn:hover {
+        transform: none;
+    }
+}
